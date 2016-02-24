@@ -16,6 +16,7 @@
   </tests>
 
   <requirements>
+    <requirement type="package" version="0.1.0">test</requirement>
     <requirement type="set_environment">JAR_PATH</requirement>
   </requirements>
 

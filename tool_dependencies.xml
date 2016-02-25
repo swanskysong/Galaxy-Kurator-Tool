@@ -1,11 +1,4 @@
 <?xml version="1.0"?>
 <tool_dependency>
-    <package name="test" version="0.1.0">
-        <install version="1.0">
-            <actions>
-		<action type="set_environment"><environment_variable name="JAR_PATH" action="prepend_to">$INSTALL_DIR</environment_variable></action>
-	    </actions>
-        </install>
-        <readme>test repository</readme>
-    </package>
+	<set_environment version="1.0"><environment_variable name="JAR_PATH" action="prepend_to">$INSTALL_DIR</environment_variable></set_environment>
 </tool_dependency>

@@ -1,22 +1,13 @@
-<tool id="fa_gc_content_1" name="First Tool for Test" version="0.1.0">
-  <description>for each sequence in a file</description>
-  <command>java -jar ${JAR_PATH} $input $output</command>
+<tool id="kurator_1" name="Kurator-wrapper" version="0.1.0">
+  <description>The wrapper to run Kurator in Galaxy</description>
+  <command>java -jar \$JAR_PATH/kurator-akka.jar -f classpath:/org/kurator/akka/samples/hello.yaml</command>
   <inputs>
     <param name="input" type="data" label="Source file"/>
   </inputs>
   <outputs>
     <data  name="output" />
   </outputs>
-
-  <tests>
-    <test>
-      <param name="input" value="fa_gc_content_input.fa"/>
-      <output name="out_file1" file="fa_gc_content_output.txt"/>
-    </test>
-  </tests>
-
   <requirements>
-    <requirement type="set_environment">JAR_PATH</requirement>
+    <requirement type="package" version="0.0.1">kurator_package</requirement>
   </requirements>
-
 </tool>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <tool_dependency>
-<package name="Kurator_package" version="0.0.1">
+<package name="kurator_package" version="0.0.1">
         <install version="1.0">
             <actions>
                 <action type="download_by_url" target_filename="kurator-akka.jar">https://github.com/swanskysong/Galaxy-Kurator-Tool/blob/master/kurator-akka.jar?raw=true</action>

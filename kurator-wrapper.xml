@@ -1,6 +1,6 @@
 <tool id="kurator_1" name="Kurator-wrapper" version="0.1.0">
   <description>The wrapper to run Kurator in Galaxy</description>
-  <command>java -jar \$JAR_PATH/kurator-akka.jar -f classpath:/org/kurator/akka/samples/hello.yaml</command>
+  <command>java -jar \$JAR_PATH/kurator-akka.jar -f \$JAR_PATH/workflow-example.yaml &lt; $input</command>
   <inputs>
     <param name="input" type="data" label="Source file"/>
   </inputs>

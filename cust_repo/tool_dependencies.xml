@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="kurator_package" version="0.0.1">
+        <repository name="kurator_test_repo" owner="thsong" />
+    </package>
+</tool_dependency>

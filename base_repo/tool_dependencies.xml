@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <tool_dependency>
-<package name="kurator_package" version="0.0.1">
+    <package name="kurator_package" version="0.0.1">
         <install version="1.0">
             <actions>
             	<!-- kurator-akka.jar -->

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <tool_dependency>
-    <package name="kurator_package" version="0.0.1">
-        <repository name="kurator_test_repo" owner="thsong" />
+    <package name="Kurator_Package" version="0.0.1">
+        <repository name="package_kurator_0_0_2" owner="thsong" toolshed="http://localhost:9009/"/>
     </package>
 </tool_dependency>

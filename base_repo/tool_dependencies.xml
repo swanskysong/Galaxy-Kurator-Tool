@@ -1,47 +1,40 @@
 <?xml version="1.0"?>
 <tool_dependency>
-    <package name="kurator_package" version="0.0.1">
+    <package name="Kurator_Package" version="0.0.1">
         <install version="1.0">
             <actions>
-            	<!-- kurator-akka.jar -->
-                <action type="download_by_url" target_filename="kurator-akka.jar">https://github.com/swanskysong/Galaxy-Kurator-Tool/blob/master/kurator-akka.jar?raw=true</action>
+            	<!-- Download kurator-akka.jar -->
+                <action type="download_by_url" target_filename="kurator-akka.jar">https://github.com/kurator-org/kurator-akka/releases/download/v0.3/kurator-akka-0.3-jar-with-dependencies.jar</action>
 		<action type="move_file">
                     <source>kurator-akka.jar</source>
                     <destination>$INSTALL_DIR</destination>
                 </action>
                 
-                <!-- kurator workflow -->
-		<action type="download_by_url" target_filename="workflow-example.yaml">https://raw.githubusercontent.com/swanskysong/Galaxy-Kurator-Tool/master/WoRMS_name_validation.yaml</action>
-                <action type="move_file">
-                    <source>workflow-example.yaml</source>
-                    <destination>$INSTALL_DIR</destination>
-                </action>
-                
-                <!-- kurator-validation package -->
-                <action type="shell_command">git clone https://github.com/kurator-org/kurator-validation.git</action>
+                <!-- Download kurator-validation package and unzip -->
+                <action type="download_by_url" target_filename="kurator-validation.jar">https://github.com/kurator-org/kurator-validation/archive/v0.3.zip</action>
+                <action type="shell_command">unzip kurator-validation.jar</action>
                 <action type="move_directory_files">
-                    <source_directory>kurator-validation</source_directory>
+                    <source_directory>kurator-validation-0.3</source_directory>
                     <destination_directory>$INSTALL_DIR/kurator-validation</destination_directory>
                 </action>
                 <action type="set_environment">
-                    <environment_variable name="KURATOR_LOCAL_PACKAGES" action="set_to">$INSTALL_DIR/kurator-validation/src/main/python</environment_variable>
+                    <environment_variable name="JYTHONPATH" action="set_to">$INSTALL_DIR/kurator-validation/packages/</environment_variable>
                 </action>
                 
-                <!-- setup jython -->
+                <!-- Install and configure jython -->
                 <action type="download_by_url" target_filename="jython-installer-2.7.0.jar">http://search.maven.org/remotecontent?filepath=org/python/jython-installer/2.7.0/jython-installer-2.7.0.jar</action>
                 <action type="shell_command">java -jar jython-installer-2.7.0.jar -s -d \$INSTALL_DIR/jython</action>
                 <action type="set_environment">
-                    <environment_variable name="JYTHON_HOME" action="set_to">$INSTALL_DIR/jython</environment_variable>
+                    <environment_variable name="JYTHONHOME" action="set_to">$INSTALL_DIR/jython</environment_variable>
                 </action>
-                <!-- <action type="shell_command">\$JYTHON_HOME/bin/pip install suds-jurko</action> -->
                 <action type="shell_command">\$INSTALL_DIR/jython/bin/pip install suds-jurko</action>
                 
+                <!-- Set an environment to reference installed files-->
                 <action type="set_environment">
                     <environment_variable name="JAR_PATH" action="set_to">$INSTALL_DIR</environment_variable>
                 </action>
 
             </actions>
         </install>
-        <readme>Downloaded from Github</readme>
     </package>
 </tool_dependency>

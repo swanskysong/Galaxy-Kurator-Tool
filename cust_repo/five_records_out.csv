@@ -1,0 +1,6 @@
+ID,TaxonName,Author,OriginalTaxonName,OriginalAuthor,WoRMSMatchType,LSID
+37929,Architectonica reevei,'(Hanley, 1862)',Architectonica reevi,,fuzzy match,urn:lsid:marinespecies.org:taxname:588206
+37932,Rapana rapiformis,'(Born, 1778)',Rapana rapiformis,,exact match,urn:lsid:marinespecies.org:taxname:140415
+180593,Buccinum donomani,'(Linnaeus, 1758)',,,no match,
+179963,Codakia paytenorum,'(Iredale, 1937)',Codakia paytenorum,,exact match,urn:lsid:marinespecies.org:taxname:215841
+62156,Rissoa venusta,Phil.,,,no match,

@@ -1,13 +1,23 @@
 <tool id="kurator_1" name="Kurator-wrapper" version="0.1.0">
   <description>The wrapper to run Kurator in Galaxy</description>
-  <command>java -jar \$JAR_PATH/kurator-akka.jar -f \$JAR_PATH/workflow-example.yaml &lt; $input</command>
+  <command>java -jar \$JAR_PATH/kurator-akka.jar -f $kuratorWorkflow -p input=$inputDataFile -p output=$outputDataFile</command>
   <inputs>
-    <param name="input" type="data" label="Source file"/>
+    <param name="kuratorWorkflow" type="data" label="Kurator workflow"/>
+    <param name="inputDataFile" type="data" label="Input file to be curated"/>
   </inputs>
   <outputs>
-    <data  name="output" />
+    <data name="outputDataFile"/>
   </outputs>
+  
+  <tests>
+    <test>
+      <param name="inputDataFile" value="five_records.csv"/>
+      <param name="kuratorWorkflow" value="example.yaml"/>
+      <output name="outputDataFile" file="five_records_output.txt"/>
+    </test>
+  </tests>
+  
   <requirements>
-    <requirement type="package" version="0.0.1">kurator_package</requirement>
+    <requirement type="package" version="0.0.1">Kurator_Package</requirement>
   </requirements>
 </tool>

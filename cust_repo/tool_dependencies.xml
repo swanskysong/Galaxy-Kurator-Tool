@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <tool_dependency>
     <package name="Kurator_Package" version="0.0.1">
-        <repository name="package_kurator_0_0_2" owner="thsong" toolshed="http://localhost:9009/"/>
+        <repository toolshed="https://toolshed.g2.bx.psu.edu" name="package_kurator_0_0_1" owner="thsong" changeset_revision="710d61c5ffef"/>
     </package>
 </tool_dependency>
